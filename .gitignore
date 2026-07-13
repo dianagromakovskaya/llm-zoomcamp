@@ -4,3 +4,4 @@ __pycache__/
 .envrc
 .tmp
 .env
+04-evaluation/models/

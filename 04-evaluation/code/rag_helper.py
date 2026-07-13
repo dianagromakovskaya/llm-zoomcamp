@@ -1,3 +1,6 @@
+import time
+
+
 INSTRUCTIONS = '''
 Your task is to answer questions from the course participants
 based on the provided context.
@@ -73,9 +76,22 @@ class RAGBase:
         )
 
         return response.output_text
+    
+    def llm_retry(
+            self,
+            prompt,
+            max_retries=5
+            ):
+        for attempt in range(max_retries):
+            try:
+                return self.llm(prompt)
+            except Exception:
+                if attempt == max_retries - 1:
+                    raise
+                time.sleep(2 ** attempt)
 
     def rag(self, query):
         search_results = self.search(query)
         prompt = self.build_prompt(query, search_results)
-        answer = self.llm(prompt)
+        answer = self.llm_retry(prompt)
         return answer
