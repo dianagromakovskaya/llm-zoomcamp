@@ -2,13 +2,13 @@
 
 Sets up the text-search RAG from homework 1 and a shared OpenAI client.
 """
-
+from dotenv import load_dotenv
 from openai import OpenAI
 
 from gitsource import GithubRepositoryDataReader
 from minsearch import Index
 
-from rag_helper import RAGBase
+from rag_helper import RAGBase, RAGTraced
 
 COMMIT = "8c1834d"
 
@@ -25,8 +25,9 @@ documents = [file.parse() for file in reader.read()]
 index = Index(text_fields=["content"], keyword_fields=["filename"])
 index.fit(documents)
 
+load_dotenv()
 client = OpenAI()
-rag = RAGBase(index=index, llm_client=client)
+rag = RAGTraced(index=index, llm_client=client)
 
 if __name__ == "__main__":
     query = "How does the agentic loop keep calling the model until it stops?"

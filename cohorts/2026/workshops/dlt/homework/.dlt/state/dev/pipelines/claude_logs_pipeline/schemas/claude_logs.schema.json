@@ -1,0 +1,1283 @@
+{
+  "version": 2,
+  "version_hash": "mLwRuP+THhq9oglos8Q7M5l52hudYgaeGRi5hSkuOgA=",
+  "engine_version": 11,
+  "name": "claude_logs",
+  "tables": {
+    "_dlt_version": {
+      "name": "_dlt_version",
+      "columns": {
+        "version": {
+          "name": "version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "engine_version": {
+          "name": "engine_version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "inserted_at": {
+          "name": "inserted_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "schema_name": {
+          "name": "schema_name",
+          "data_type": "text",
+          "nullable": false
+        },
+        "version_hash": {
+          "name": "version_hash",
+          "data_type": "text",
+          "nullable": false
+        },
+        "schema": {
+          "name": "schema",
+          "data_type": "text",
+          "nullable": false
+        }
+      },
+      "write_disposition": "skip",
+      "resource": "_dlt_version",
+      "description": "Created by DLT. Tracks schema updates"
+    },
+    "_dlt_loads": {
+      "name": "_dlt_loads",
+      "columns": {
+        "load_id": {
+          "name": "load_id",
+          "data_type": "text",
+          "nullable": false,
+          "precision": 64
+        },
+        "schema_name": {
+          "name": "schema_name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "status": {
+          "name": "status",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "inserted_at": {
+          "name": "inserted_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "schema_version_hash": {
+          "name": "schema_version_hash",
+          "data_type": "text",
+          "nullable": true
+        }
+      },
+      "write_disposition": "skip",
+      "resource": "_dlt_loads",
+      "description": "Created by DLT. Tracks completed loads"
+    },
+    "claude_logs": {
+      "columns": {
+        "type": {
+          "name": "type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "mode": {
+          "name": "mode",
+          "data_type": "text",
+          "nullable": true
+        },
+        "session_id": {
+          "name": "session_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "uuid": {
+          "name": "uuid",
+          "nullable": false,
+          "primary_key": true,
+          "data_type": "text"
+        },
+        "_dlt_load_id": {
+          "name": "_dlt_load_id",
+          "data_type": "text",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        },
+        "permission_mode": {
+          "name": "permission_mode",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message_id": {
+          "name": "message_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "is_snapshot_update": {
+          "name": "is_snapshot_update",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "snapshot__message_id": {
+          "name": "snapshot__message_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "snapshot__timestamp": {
+          "name": "snapshot__timestamp",
+          "data_type": "timestamp",
+          "nullable": true
+        },
+        "is_sidechain": {
+          "name": "is_sidechain",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "prompt_id": {
+          "name": "prompt_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "timestamp": {
+          "name": "timestamp",
+          "data_type": "timestamp",
+          "nullable": true
+        },
+        "prompt_source": {
+          "name": "prompt_source",
+          "data_type": "text",
+          "nullable": true
+        },
+        "user_type": {
+          "name": "user_type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "entrypoint": {
+          "name": "entrypoint",
+          "data_type": "text",
+          "nullable": true
+        },
+        "cwd": {
+          "name": "cwd",
+          "data_type": "text",
+          "nullable": true
+        },
+        "version": {
+          "name": "version",
+          "data_type": "text",
+          "nullable": true
+        },
+        "git_branch": {
+          "name": "git_branch",
+          "data_type": "text",
+          "nullable": true
+        },
+        "origin__kind": {
+          "name": "origin__kind",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__role": {
+          "name": "message__role",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__content": {
+          "name": "message__content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "parent_uuid": {
+          "name": "parent_uuid",
+          "data_type": "text",
+          "nullable": true
+        },
+        "attachment__type": {
+          "name": "attachment__type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "attachment__is_initial": {
+          "name": "attachment__is_initial",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "attachment__show_concurrency_note": {
+          "name": "attachment__show_concurrency_note",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "attachment__content": {
+          "name": "attachment__content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "attachment__skill_count": {
+          "name": "attachment__skill_count",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "ai_title": {
+          "name": "ai_title",
+          "data_type": "text",
+          "nullable": true
+        },
+        "request_id": {
+          "name": "request_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "effort": {
+          "name": "effort",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__model": {
+          "name": "message__model",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__id": {
+          "name": "message__id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__type": {
+          "name": "message__type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__stop_reason": {
+          "name": "message__stop_reason",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__usage__input_tokens": {
+          "name": "message__usage__input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__cache_creation_input_tokens": {
+          "name": "message__usage__cache_creation_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__cache_read_input_tokens": {
+          "name": "message__usage__cache_read_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__output_tokens": {
+          "name": "message__usage__output_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__service_tier": {
+          "name": "message__usage__service_tier",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__usage__inference_geo": {
+          "name": "message__usage__inference_geo",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__usage__speed": {
+          "name": "message__usage__speed",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__usage__cache_creation__ephemeral_1h_input_tokens": {
+          "name": "message__usage__cache_creation__ephemeral_1h_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__cache_creation__ephemeral_5m_input_tokens": {
+          "name": "message__usage__cache_creation__ephemeral_5m_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__server_tool_use__web_search_requests": {
+          "name": "message__usage__server_tool_use__web_search_requests",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__usage__server_tool_use__web_fetch_requests": {
+          "name": "message__usage__server_tool_use__web_fetch_requests",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "source_tool_assistant_uuid": {
+          "name": "source_tool_assistant_uuid",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__success": {
+          "name": "tool_use_result__success",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "tool_use_result__command_name": {
+          "name": "tool_use_result__command_name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "is_meta": {
+          "name": "is_meta",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "source_tool_use_id": {
+          "name": "source_tool_use_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "attribution_skill": {
+          "name": "attribution_skill",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__stdout": {
+          "name": "tool_use_result__stdout",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__stderr": {
+          "name": "tool_use_result__stderr",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__interrupted": {
+          "name": "tool_use_result__interrupted",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "tool_use_result__is_image": {
+          "name": "tool_use_result__is_image",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "tool_use_result__no_output_expected": {
+          "name": "tool_use_result__no_output_expected",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "last_prompt": {
+          "name": "last_prompt",
+          "data_type": "text",
+          "nullable": true
+        },
+        "leaf_uuid": {
+          "name": "leaf_uuid",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result": {
+          "name": "tool_use_result",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_denial_kind": {
+          "name": "tool_denial_kind",
+          "data_type": "text",
+          "nullable": true
+        },
+        "subtype": {
+          "name": "subtype",
+          "data_type": "text",
+          "nullable": true
+        },
+        "duration_ms": {
+          "name": "duration_ms",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message_count": {
+          "name": "message_count",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "message__diagnostics__cache_miss_reason__type": {
+          "name": "message__diagnostics__cache_miss_reason__type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "message__diagnostics__cache_miss_reason__cache_missed_input_tokens": {
+          "name": "message__diagnostics__cache_miss_reason__cache_missed_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "attachment__item_count": {
+          "name": "attachment__item_count",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "tool_use_result__answers__destination_for_the_pipelinex": {
+          "name": "tool_use_result__answers__destination_for_the_pipelinex",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__answers__the_logs_are_local_jsonl_files_one_json_object_per_line_at_home_codespace_claude_projects_xx_x_jsonl_load_each_line_as_a_raw_recordx": {
+          "name": "tool_use_result__answers__the_logs_are_local_jsonl_files_one_json_object_per_line_at_home_codespace_claude_projects_xx_x_jsonl_load_each_line_as_a_raw_recordx",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__answers__plan_run_uv_run_dlthub_non_interactive_pipeline_init_filesystem_duckdb_in_workspaces_llm_zoomcamp_cohorts_2026_workshops_dlt_homework_backend_local_reader_read_jsonl_bucket_url_home_codespace_claude_projects_file_glob_xx_x_jsonl_single_table_all_matched_jsonl_lines_go_into_one_table_called_claude_logs_raw_json_fields_as_is_pipeline_name_claude_logs_pipeline_dataset_claude_logs_proceedx": {
+          "name": "tool_use_result__answers__plan_run_uv_run_dlthub_non_interactive_pipeline_init_filesystem_duckdb_in_workspaces_llm_zoomcamp_cohorts_2026_workshops_dlt_homework_backend_local_reader_read_jsonl_bucket_url_home_codespace_claude_projects_file_glob_xx_x_jsonl_single_table_all_matched_jsonl_lines_go_into_one_table_called_claude_logs_raw_json_fields_as_is_pipeline_name_claude_logs_pipeline_dataset_claude_logs_proceedx",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__type": {
+          "name": "tool_use_result__type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__file__file_path": {
+          "name": "tool_use_result__file__file_path",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__file__content": {
+          "name": "tool_use_result__file__content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__file__num_lines": {
+          "name": "tool_use_result__file__num_lines",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "tool_use_result__file__start_line": {
+          "name": "tool_use_result__file__start_line",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "tool_use_result__file__total_lines": {
+          "name": "tool_use_result__file__total_lines",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "snapshot_message_id": {
+          "name": "snapshot_message_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tracking_path": {
+          "name": "tracking_path",
+          "data_type": "text",
+          "nullable": true
+        },
+        "backup__backup_file_name": {
+          "name": "backup__backup_file_name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "backup__version": {
+          "name": "backup__version",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "backup__backup_time": {
+          "name": "backup__backup_time",
+          "data_type": "timestamp",
+          "nullable": true
+        },
+        "tool_use_result__file_path": {
+          "name": "tool_use_result__file_path",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__content": {
+          "name": "tool_use_result__content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__original_file": {
+          "name": "tool_use_result__original_file",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__user_modified": {
+          "name": "tool_use_result__user_modified",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "tool_use_result__old_string": {
+          "name": "tool_use_result__old_string",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__new_string": {
+          "name": "tool_use_result__new_string",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__replace_all": {
+          "name": "tool_use_result__replace_all",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "tool_use_result__answers__only_1_file_0_18_mb_matches_right_now_small_enough_to_just_run_the_full_load_directly_proceedx": {
+          "name": "tool_use_result__answers__only_1_file_0_18_mb_matches_right_now_small_enough_to_just_run_the_full_load_directly_proceedx",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__answers__pipeline_works_want_to_set_it_up_so_future_runs_only_load_new_updated_session_files_instead_of_a_fresh_dataset_each_timex": {
+          "name": "tool_use_result__answers__pipeline_works_want_to_set_it_up_so_future_runs_only_load_new_updated_session_files_instead_of_a_fresh_dataset_each_timex",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__answers__not_every_log_line_has_a_uuid_meta_lines_like_mode_permission_mode_file_history_snapshot_don_t_message_lines_like_user_assistant_attachment_system_do_108_139_lines_have_it_use_uuid_as_primary_key_for_merge_dedup_anyway_lines_without_uuid_won_t_dedup_on_re_reads_of_a_growing_file_rare_meta_events_minor_duplication_riskx": {
+          "name": "tool_use_result__answers__not_every_log_line_has_a_uuid_meta_lines_like_mode_permission_mode_file_history_snapshot_don_t_message_lines_like_user_assistant_attachment_system_do_108_139_lines_have_it_use_uuid_as_primary_key_for_merge_dedup_anyway_lines_without_uuid_won_t_dedup_on_re_reads_of_a_growing_file_rare_meta_events_minor_duplication_riskx",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__answers__should_individual_records_also_be_filtered_by_a_timestamp_column_in_addition_to_file_level_modification_date_filteringx": {
+          "name": "tool_use_result__answers__should_individual_records_also_be_filtered_by_a_timestamp_column_in_addition_to_file_level_modification_date_filteringx",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_result__return_code_interpretation": {
+          "name": "tool_use_result__return_code_interpretation",
+          "data_type": "text",
+          "nullable": true
+        }
+      },
+      "write_disposition": "merge",
+      "name": "claude_logs",
+      "resource": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "_dlt_pipeline_state": {
+      "columns": {
+        "version": {
+          "name": "version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "engine_version": {
+          "name": "engine_version",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "pipeline_name": {
+          "name": "pipeline_name",
+          "data_type": "text",
+          "nullable": false
+        },
+        "state": {
+          "name": "state",
+          "data_type": "text",
+          "nullable": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "nullable": false
+        },
+        "version_hash": {
+          "name": "version_hash",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_load_id": {
+          "name": "_dlt_load_id",
+          "data_type": "text",
+          "nullable": false,
+          "precision": 64
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "write_disposition": "append",
+      "file_format": "preferred",
+      "name": "_dlt_pipeline_state",
+      "resource": "_dlt_pipeline_state",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__attachment__added_names": {
+      "name": "claude_logs__attachment__added_names",
+      "columns": {
+        "value": {
+          "name": "value",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__attachment__added_lines": {
+      "name": "claude_logs__attachment__added_lines",
+      "columns": {
+        "value": {
+          "name": "value",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__attachment__added_types": {
+      "name": "claude_logs__attachment__added_types",
+      "columns": {
+        "value": {
+          "name": "value",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__attachment__names": {
+      "name": "claude_logs__attachment__names",
+      "columns": {
+        "value": {
+          "name": "value",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__message__content": {
+      "name": "claude_logs__message__content",
+      "columns": {
+        "type": {
+          "name": "type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "thinking": {
+          "name": "thinking",
+          "data_type": "text",
+          "nullable": true
+        },
+        "signature": {
+          "name": "signature",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        },
+        "id": {
+          "name": "id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "name": {
+          "name": "name",
+          "data_type": "text",
+          "nullable": true
+        },
+        "caller__type": {
+          "name": "caller__type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__skill": {
+          "name": "input__skill",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__args": {
+          "name": "input__args",
+          "data_type": "text",
+          "nullable": true
+        },
+        "tool_use_id": {
+          "name": "tool_use_id",
+          "data_type": "text",
+          "nullable": true
+        },
+        "content": {
+          "name": "content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "text": {
+          "name": "text",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__command": {
+          "name": "input__command",
+          "data_type": "text",
+          "nullable": true
+        },
+        "is_error": {
+          "name": "is_error",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "input__file_path": {
+          "name": "input__file_path",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__content": {
+          "name": "input__content",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__limit": {
+          "name": "input__limit",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "input__replace_all": {
+          "name": "input__replace_all",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "input__old_string": {
+          "name": "input__old_string",
+          "data_type": "text",
+          "nullable": true
+        },
+        "input__new_string": {
+          "name": "input__new_string",
+          "data_type": "text",
+          "nullable": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__message__usage__iterations": {
+      "name": "claude_logs__message__usage__iterations",
+      "columns": {
+        "input_tokens": {
+          "name": "input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "output_tokens": {
+          "name": "output_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "cache_read_input_tokens": {
+          "name": "cache_read_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "cache_creation_input_tokens": {
+          "name": "cache_creation_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "type": {
+          "name": "type",
+          "data_type": "text",
+          "nullable": true
+        },
+        "cache_creation__ephemeral_5m_input_tokens": {
+          "name": "cache_creation__ephemeral_5m_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "cache_creation__ephemeral_1h_input_tokens": {
+          "name": "cache_creation__ephemeral_1h_input_tokens",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__message__content__input__questions": {
+      "name": "claude_logs__message__content__input__questions",
+      "columns": {
+        "question": {
+          "name": "question",
+          "data_type": "text",
+          "nullable": true
+        },
+        "header": {
+          "name": "header",
+          "data_type": "text",
+          "nullable": true
+        },
+        "multi_select": {
+          "name": "multi_select",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs__message__content",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__message__content__input__questions__options": {
+      "name": "claude_logs__message__content__input__questions__options",
+      "columns": {
+        "label": {
+          "name": "label",
+          "data_type": "text",
+          "nullable": true
+        },
+        "description": {
+          "name": "description",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs__message__content__input__questions",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__tool_use_result__questions": {
+      "name": "claude_logs__tool_use_result__questions",
+      "columns": {
+        "question": {
+          "name": "question",
+          "data_type": "text",
+          "nullable": true
+        },
+        "header": {
+          "name": "header",
+          "data_type": "text",
+          "nullable": true
+        },
+        "multi_select": {
+          "name": "multi_select",
+          "data_type": "bool",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__tool_use_result__questions__options": {
+      "name": "claude_logs__tool_use_result__questions__options",
+      "columns": {
+        "label": {
+          "name": "label",
+          "data_type": "text",
+          "nullable": true
+        },
+        "description": {
+          "name": "description",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs__tool_use_result__questions",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__tool_use_result__structured_patch": {
+      "name": "claude_logs__tool_use_result__structured_patch",
+      "columns": {
+        "old_start": {
+          "name": "old_start",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "old_lines": {
+          "name": "old_lines",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "new_start": {
+          "name": "new_start",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "new_lines": {
+          "name": "new_lines",
+          "data_type": "bigint",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    },
+    "claude_logs__tool_use_result__structured_patch__lines": {
+      "name": "claude_logs__tool_use_result__structured_patch__lines",
+      "columns": {
+        "value": {
+          "name": "value",
+          "data_type": "text",
+          "nullable": true
+        },
+        "_dlt_root_id": {
+          "name": "_dlt_root_id",
+          "data_type": "text",
+          "nullable": false,
+          "root_key": true
+        },
+        "_dlt_parent_id": {
+          "name": "_dlt_parent_id",
+          "data_type": "text",
+          "nullable": false,
+          "parent_key": true
+        },
+        "_dlt_list_idx": {
+          "name": "_dlt_list_idx",
+          "data_type": "bigint",
+          "nullable": false
+        },
+        "_dlt_id": {
+          "name": "_dlt_id",
+          "data_type": "text",
+          "nullable": false,
+          "unique": true,
+          "row_key": true
+        }
+      },
+      "parent": "claude_logs__tool_use_result__structured_patch",
+      "x-normalizer": {
+        "seen-data": true
+      }
+    }
+  },
+  "settings": {
+    "detections": [
+      "iso_timestamp"
+    ],
+    "default_hints": {
+      "not_null": [
+        "_dlt_id",
+        "_dlt_root_id",
+        "_dlt_parent_id",
+        "_dlt_list_idx",
+        "_dlt_load_id"
+      ],
+      "parent_key": [
+        "_dlt_parent_id"
+      ],
+      "root_key": [
+        "_dlt_root_id"
+      ],
+      "unique": [
+        "_dlt_id"
+      ],
+      "row_key": [
+        "_dlt_id"
+      ]
+    }
+  },
+  "normalizers": {
+    "names": "snake_case",
+    "json": {
+      "module": "dlt.common.normalizers.json.relational",
+      "config": {
+        "propagation": {
+          "tables": {
+            "claude_logs": {
+              "_dlt_id": "_dlt_root_id"
+            }
+          }
+        }
+      }
+    }
+  },
+  "previous_hashes": [
+    "JTtRd2dMeo/z0xzuc6Bywa02PkBHyp6wucu7C1s5WF4=",
+    "bBf9uv8Nratr8cWjZsLPzhPXXw5w4Goxy+/h5XkpXms="
+  ]
+}
