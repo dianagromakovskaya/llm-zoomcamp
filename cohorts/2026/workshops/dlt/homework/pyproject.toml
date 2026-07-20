@@ -10,4 +10,6 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "pydantic-ai>=0.0.30",
     "logfire>=4.37.0",
+    "dlt[duckdb,filesystem]>=1.29.0",
+    "fastmcp>=3.4.4",
 ]
